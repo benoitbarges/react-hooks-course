@@ -79,52 +79,6 @@ function PlayerInput({onSubmit, label}) {
     )
 }
 
-// class PlayerInput extends React.Component {
-//   state = {
-//     username: ''
-//   }
-//   handleSubmit = (event) => {
-//     event.preventDefault()
-
-//     this.props.onSubmit(this.state.username)
-//   }
-//   handleChange = (event) => {
-//     this.setState({
-//       username: event.target.value
-//     })
-//   }
-//   render() {
-//     return (
-//       <ThemeConsumer>
-//         {(theme) => (
-//           <form className='column player' onSubmit={this.handleSubmit}>
-//             <label htmlFor='username' className='player-label'>
-//               {this.props.label}
-//             </label>
-//             <div className='row player-inputs'>
-//               <input
-//                 type='text'
-//                 id='username'
-//                 className={`input-${theme}`}
-//                 placeholder='github username'
-//                 autoComplete='off'
-//                 value={this.state.username}
-//                 onChange={this.handleChange}
-//               />
-//               <button
-//                 className={`btn ${theme === 'dark' ? 'light-btn' : 'dark-btn'}`}
-//                 type='submit'
-//                 disabled={!this.state.username}
-//               >
-//                 Submit
-//               </button>
-//             </div>
-//           </form>
-//         )}
-//       </ThemeConsumer>
-//     )
-//   }
-// }
 
 PlayerInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
@@ -170,21 +124,9 @@ export default function Battle () {
   const [playerOne, setPlayerOne] = React.useState(null)
   const [playerTwo, setPlayerTwo] = React.useState(null)
 
-  const handleSubmit = (id, player) => {
-    if (id === 'playerOne') {
-      setPlayerOne(player)
-    } else {
-      setPlayerTwo(player)
-    }
-  }
+  const handleSubmit = (id, player) => id === 'playerOne' ? setPlayerOne(player) : setPlayerTwo(player)
 
-  const handleReset = (id) => {
-    if (id === 'playerOne') {
-      setPlayerOne(null)
-    } else {
-      setPlayerTwo(null)
-    }
-  }
+  const handleReset = (id) =>  id === 'playerOne' ? setPlayerOne(null) : setnullTwo(null)
 
   return (
     <React.Fragment>
