@@ -12,14 +12,14 @@ const Results = React.lazy(() => import('./components/Results'))
 
 function App () {
   const [theme, setTheme] = React.useState('light')
-  const toggleTheme = () => React.setTheme(theme => theme === 'light' : 'dark')
+  const toggleTheme = () => setTheme(theme => theme === 'light' ? 'dark' : 'light')
 
   return (
     <Router>
-      <ThemeProvider value={this.state}>
-        <div className={this.state.theme}>
+      <ThemeProvider value={theme}>
+        <div className={theme}>
           <div className='container'>
-            <Nav />
+            <Nav toggleTheme={toggleTheme}/>
 
             <React.Suspense fallback={<Loading />} >
               <Switch>
