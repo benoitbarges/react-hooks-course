@@ -79,6 +79,14 @@ ReposGrid.propTypes = {
   repos: PropTypes.array.isRequired
 }
 
+function Popular () {
+  const [selectedLanguage, setSelectedLanguage] = React.useState('All')
+  const [repos = setRepos] = React.useState({})
+  const [error, setError] = React.useState(null)
+
+
+}
+
 export default class Popular extends React.Component {
   state = {
     selectedLanguage: 'All',
