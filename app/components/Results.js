@@ -47,6 +47,10 @@ ProfileList.propTypes = {
   profile: PropTypes.object.isRequired,
 }
 
+export default function Results () {
+
+}
+
 export default class Results extends React.Component {
   state = {
     winner: null,
