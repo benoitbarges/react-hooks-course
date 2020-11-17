@@ -76,7 +76,7 @@ export default function Results ({ location }) {
     battle([ playerOne, playerTwo ])
       .then(players => dispatch({ type: 'success', winner: players[0], loser: players[1] }))
       .catch(error => dispatch({ type: 'error', error }))
-  }, [])
+  }, [playerOne, playerTwo])
 
   if (state.loading === true) {
     return <Loading text='Battling' />
