@@ -100,7 +100,7 @@ export default function Popular () {
   const [selectedLanguage, setSelectedLanguage] = React.useState('All')
   const [state, dispatch] = React.useReducer(
     popularReducer,
-    { error: null }
+    { error: null, repos: {} }
   )
 
   const fetchedLanguages = React.useRef([])
