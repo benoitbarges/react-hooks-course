@@ -60,6 +60,8 @@ const resultsReducer = (state, action) => {
       loading: false,
       error: action.error.message
     }
+  } else {
+    throw new Error("That action type isn't supported.")
   }
 }
 

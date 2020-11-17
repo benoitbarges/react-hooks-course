@@ -91,6 +91,8 @@ const popularReducer = (state, action) => {
       ...state,
       error: action.error.message
     }
+  } else {
+    throw new Error("That action type isn't supported.")
   }
 }
 
